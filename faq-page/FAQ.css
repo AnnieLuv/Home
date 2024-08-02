@@ -56,7 +56,10 @@ body{
   animation: spin 2s linear infinite;
 }
 .faq::before{
-  transform: translate3d(0,0,0);
+  -webkit-backface-visibility:hidden;
+  -moz-backface-visibility:hidden;
+  -webkit-transform: translate3d(0,0,0);;
+  -moz-transform: translate3d(0,0,0);
   background-color: white;
   filter: blur(1rem);
 }
