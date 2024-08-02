@@ -1,0 +1,250 @@
+
+* {
+  padding: 0;
+  margin: 0;
+}
+body{
+  margin: 0%;
+  padding-left:10%;
+  padding-right: 10%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgb(0, 0, 0);;
+  height: 100vh;
+  color:  #ffffff;
+  text-transform: capitalize;
+  animation: fadeInAnimation ease 4s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+#bckground-img{
+
+  height: 100%;
+  position: absolute;
+  top: -60px;
+  left: 10px;
+  z-index: -1;
+  opacity: 0.1;
+}
+#title{
+  position: relative;
+  animation: color-change 600ms infinite alternate-reverse;
+  font-family: "Bebas Neue", sans-serif;;
+  font-size: 2.5rem;
+  margin: auto;
+}
+#title::after{
+  content:"AnnieCHANG.LUV";
+  position: absolute;
+  left:0;
+}
+#title:hover::after{
+  animation: textglitch 0.3s linear infinite;
+}
+#menu{
+  box-sizing: border-box;
+  position: relative;
+  width: 120px;
+  height: 30px;
+  background: linear-gradient( to right ,rgb(252, 252, 252) , rgb(252, 176, 188) );
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px #000000; 
+  padding: 5px;
+  text-align:center;
+}
+#menu > .item{
+  color: green;
+  position:absolute;
+  z-index: -1;
+  top:0;
+}
+li:not(:last-child) { 
+  margin-bottom: 25px;  
+}
+li{
+  position: relative;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+li::before{
+  content: "";
+  background-image: linear-gradient(to bottom, #ffffff , rgb(255, 0, 174) );
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  left: -20px;
+  bottom: 0;
+}
+ul{
+  list-style-type: none;
+}
+#Annie{
+  color: rgb(255, 0, 217);
+}
+#Annie:hover{
+  display: inline-block;
+  color: white;
+  animation: slant 1s infinite alternate-reverse;
+}
+
+.topbar{
+  grid-column-start: span 2;
+  display: flex;
+  flex: 1;
+  border-bottom: 2px solid  rgb(255, 0, 174);
+  align-items: center;
+  gap: 1rem;
+}
+#options{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+#icon{
+  width: 300px;
+  animation: rotation 6s infinite linear;
+  border-radius: 50%;
+}
+.grid.layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 10% auto 15%;
+  height: 100vh;
+}
+.low.bar{
+  background-image: linear-gradient(to left, rgb(255, 0, 174), rgb(0, 0, 0));
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  grid-area: 3 / 1 / 4 / -1; 
+  font-size: 2rem;
+  font-weight: bold;
+}
+.low.bar > *:hover {
+  text-decoration: underline;
+  color:rgb(255, 255, 255);
+}
+.grid.selfie{
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  grid-area: 2 / 2 / 3 / 3; 
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-image: linear-gradient(0deg, rgb(0, 0, 0) 20%,  rgb(255, 0, 174)50%, rgb(0, 0, 0) 90% )
+}
+/* information section */
+.info .txt{
+  color:#9f0087;
+  font-family:cursive;
+  font-weight: bolder;
+  /* animation: text-enlarger 2.3s infinite alternate-reverse; */
+}
+.intro{
+  grid-row-start: 2;
+  z-index: 1;
+  color:#ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.grid.info {
+  display: flex;
+  align-items: center;
+  justify-content: top;
+  flex-direction: column;
+  padding: 40px;
+  gap: 50px;
+}
+.more-info{
+  font-size: 0.8rem;
+  font-weight: bold;
+  display:flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+/* glitch layers on selfie */
+.grid.selfie .wrapper{
+  min-width: 400px;
+  height: 60%;
+  position: relative;
+  overflow: hidden;
+}
+.grid.selfie .wrapper .layer{
+  width: 100%;
+  height: 100%;
+  background-image: url("./imvu-selfie.png");
+  background-position: 35% 50%;;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+}
+.grid.selfie .wrapper .layer.two{
+  animation: glitch-anim-1 2.3s infinite alternate-reverse;
+  left: 15px;
+}
+.grid.selfie .wrapper .layer.three{
+  animation: glitch-anim-2 3s infinite alternate-reverse;
+  right: 5px;
+}
+.grid.selfie .wrapper .layer.four{
+  animation: glitch-anim-flash 600ms infinite alternate-reverse;
+  left: 15px;
+}
+
+/*phone view*/
+
+@media (width < 600px) {
+  body{
+    padding: 0%;
+  }
+  #bckground-img{
+    display: none;
+  }
+  .grid.layout{
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 60% auto 10%;
+  }
+  .grid.selfie{
+    grid-area: auto;
+    background-image: linear-gradient(0deg, rgb(0, 0, 0) 20%,  #B026FF 50%, rgb(0, 0, 0) 90% )
+  }
+  .grid.selfie .wrapper{
+    height: 80%;
+    min-width: 300px;
+  }
+  .grid.info{
+    text-align: center;
+    align-items: top;
+    padding-top: 0;
+  }
+  .grid.info .more-info{
+    flex-direction: row;
+    
+  }
+  .low.bar{
+    display: none;
+  }
+  .topbar{
+    grid-area: auto;
+  }
+  li::before{
+    display: none;
+  }
+  li{
+    /* border:2px solid rgb(255, 0, 187); */
+    background-image: linear-gradient(to left, #B026FF, black);
+    color:rgb(255, 255, 255);
+  }
+  #Annie{
+    display: inline-block;
+    color: white;
+    animation: slant 1.3s infinite alternate-reverse;
+  }
+}
