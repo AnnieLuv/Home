@@ -42,7 +42,6 @@ body{
   initial-value: 0deg;
   inherits: false;
 }
-.faq::before,
 .faq::after{
   --faq-highlight: 0deg;
   content: '';
@@ -55,19 +54,9 @@ body{
   background-image: conic-gradient(from var(--faq-highlight), rgb(255, 0, 0) , rgb(0, 229, 255), rgb(255, 0, 43));
   animation: spin 2s linear infinite;
 }
-.faq::before{
-  -webkit-backface-visibility:hidden;
-  -moz-backface-visibility:hidden;
-  -webkit-transform: translate3d(0,0,0);;
-  -moz-transform: translate3d(0,0,0);
-  background-color: white;
-  filter: blur(1rem);
-}
-
 .faq .container{
   width: 95%;
 }
-
 .faq .container .question{
   position: relative;
   text-align: center;
